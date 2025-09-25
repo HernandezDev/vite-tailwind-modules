@@ -41,12 +41,12 @@ Cada módulo debe exportar una clase por defecto.
 // src/modules/algo.js
 export default class Algo {
   constructor(element) {
-    if (element) {
-      // Añadir un listener al elemento
-      element.addEventListener("click", () => {
-        alert("Algo module instanciado y clickeado!");
-      });
-    }
+    element.addEventListener("click", () => {
+      this.alert();
+    });
+  }
+  alert() {
+    alert("Alerta desde el módulo Algo!");
   }
 }
 ```
@@ -65,11 +65,10 @@ Este proyecto incluye Prettier y el plugin prettier-plugin-tailwindcss.
 El código y las clases de Tailwind se ordenan automáticamente al guardar los archivos.
 
 ## Uso de Esmodules como clases
-| Tipo        | Uso principal                                             | Ejemplo de aplicación            | Ventajas                                        | Desventajas                                 |
-|-------------|----------------------------------------------------------|----------------------------------|-------------------------------------------------|---------------------------------------------|
-| Clases      | Lógica compleja, patrones OOP, servicios                 | Modelos, utilidades, stores      | Encapsulamiento, herencia, instanciación        | Verbosidad, menos idiomático en frontend    |
-| Funciones   | Utilidades, helpers, lógica simple                       | Formateo, cálculos, validaciones | Sencillez, reutilización, fácil testeo          | Menos adecuadas para lógica con estado      |
-| Componentes | UI, partes visuales reutilizables                        | Botones, menús, tarjetas         | Composición, reutilización, integración con UI   | Dependen de framework (React, Vue, etc.)    |
-| Hooks       | Lógica de estado, efectos secundarios en componentes     | useState, useEffect, useFetch    | Separación de lógica, reutilización en React     | Específicos de React, no universales        |
 
-
+| Tipo        | Uso principal                                        | Ejemplo de aplicación            | Ventajas                                       | Desventajas                              |
+| ----------- | ---------------------------------------------------- | -------------------------------- | ---------------------------------------------- | ---------------------------------------- |
+| Clases      | Lógica compleja, patrones OOP, servicios             | Modelos, utilidades, stores      | Encapsulamiento, herencia, instanciación       | Verbosidad, menos idiomático en frontend |
+| Funciones   | Utilidades, helpers, lógica simple                   | Formateo, cálculos, validaciones | Sencillez, reutilización, fácil testeo         | Menos adecuadas para lógica con estado   |
+| Componentes | UI, partes visuales reutilizables                    | Botones, menús, tarjetas         | Composición, reutilización, integración con UI | Dependen de framework (React, Vue, etc.) |
+| Hooks       | Lógica de estado, efectos secundarios en componentes | useState, useEffect, useFetch    | Separación de lógica, reutilización en React   | Específicos de React, no universales     |

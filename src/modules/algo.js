@@ -1,9 +1,11 @@
 export default class Algo {
   constructor(element) {
-    if (element) {
-      element.addEventListener('click', () => {
-        alert('Algo module instanciado y clickeado!');
-      });
+    element.addEventListener('click', () => {
+      this.alert();
+     });
     }
+  alert() {
+    alert('Alerta desde el módulo Algo!');
   }
 }
+
