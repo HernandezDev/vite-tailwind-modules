@@ -41,7 +41,7 @@ Cada módulo debe exportar una clase por defecto.
 // src/modules/algo.js
 export default class Algo {
   constructor(element) {
-    this.element = element;
+    this.element = element; // Todos los metodos pueden crear propiedades con "this" y acceder a ellas
     element.addEventListener("click", () => {
       this.alert();
     });
