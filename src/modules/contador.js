@@ -1,4 +1,4 @@
-export default class Algo {
+export default class Contador {
   constructor(element) {
     this.element = element;
     element.addEventListener('click', () => {
