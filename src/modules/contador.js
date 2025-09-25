@@ -2,12 +2,11 @@ export default class Algo {
   constructor(element) {
     this.element = element;
     element.addEventListener('click', () => {
-      this.alert();
+      this.increment();
      });
     }
-  alert() {
-    alert('Alerta desde el módulo Algo!');
-    this.element.classList.add('bg-green-500');
+  increment() {
+    this.element.textContent = parseInt(this.element.textContent) + 1;
   }
 }
 

@@ -36,23 +36,29 @@ npm run build
 Coloca tus módulos JS en `src/modules/`.  
 Cada módulo debe exportar una clase por defecto.
 
-### Ejemplo de módulo y cómo añadir un listener en el constructor
+### Ejemplo de módulo y manipulación del elemento con una clase
 
 ```js
-// src/modules/algo.js
-export default class Algo {
+// src/modules/contador.js
+export default class Contador {
   constructor(element) {
-    this.element = element; // Todos los metodos pueden crear propiedades con "this" y acceder a ellas
+    // Puedes crear propiedades en cualquier método usando "this.propiedad"
+    // Todas las propiedades creadas con "this" son accesibles desde cualquier método de la instancia
+    this.element = element;
     element.addEventListener("click", () => {
-      this.alert();
+      this.increment();
     });
   }
-  alert() {
-    alert("Alerta desde el módulo Algo!");
+  increment() {
+    // Acceso a la propiedad "element" desde otro método
+    this.element.textContent = parseInt(this.element.textContent) + 1;
     this.element.classList.add("bg-green-500"); // Manipulación del elemento: añade una clase de Tailwind
   }
 }
 ```
+
+En las clases de JavaScript, puedes crear propiedades en cualquier método usando `this.propiedad = valor;`.  
+Todas las propiedades creadas con `this` son accesibles desde cualquier método de la instancia, lo que permite compartir y manipular datos o referencias entre los distintos métodos de la clase.
 
 ## Uso en HTML
 
