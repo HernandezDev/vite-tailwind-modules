@@ -64,6 +64,12 @@ Agrega un elemento con el atributo `data-module="nombreModulo"` para que se inst
 Este proyecto incluye Prettier y el plugin prettier-plugin-tailwindcss.  
 El código y las clases de Tailwind se ordenan automáticamente al guardar los archivos.
 
-## Licencia
+## Uso de Esmodules como clases
+| Tipo        | Uso principal                                             | Ejemplo de aplicación            | Ventajas                                        | Desventajas                                 |
+|-------------|----------------------------------------------------------|----------------------------------|-------------------------------------------------|---------------------------------------------|
+| Clases      | Lógica compleja, patrones OOP, servicios                 | Modelos, utilidades, stores      | Encapsulamiento, herencia, instanciación        | Verbosidad, menos idiomático en frontend    |
+| Funciones   | Utilidades, helpers, lógica simple                       | Formateo, cálculos, validaciones | Sencillez, reutilización, fácil testeo          | Menos adecuadas para lógica con estado      |
+| Componentes | UI, partes visuales reutilizables                        | Botones, menús, tarjetas         | Composición, reutilización, integración con UI   | Dependen de framework (React, Vue, etc.)    |
+| Hooks       | Lógica de estado, efectos secundarios en componentes     | useState, useEffect, useFetch    | Separación de lógica, reutilización en React     | Específicos de React, no universales        |
 
-MIT
+
