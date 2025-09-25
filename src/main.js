@@ -8,15 +8,13 @@ async function initModules() {
 
   document.querySelectorAll('[data-module]').forEach(async (el) => {
     const moduleName = el.getAttribute('data-module');
-    // Ajustar la ruta si es necesario
-    let modulePath = `./modules/${moduleName}.js`;
-    if (!(modulePath in modules)) {
-      modulePath = `/src/modules/${moduleName}.js`;
-    }
+    // Usar solo la ruta relativa principal
+    const modulePath = `./modules/${moduleName}.js`;
     console.log('Buscando modulo:', modulePath);
 
     if (modules[modulePath]) {
       const mod = await modules[modulePath]();
+      // === AQUÍ SE INICIALIZA EL MÓDULO ===
       new mod.default(el);
     } else {
       console.warn(`No se encontró el módulo para: ${modulePath}`);
