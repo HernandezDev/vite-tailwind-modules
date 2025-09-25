@@ -48,6 +48,7 @@ export default class Algo {
   }
   alert() {
     alert("Alerta desde el módulo Algo!");
+    this.element.classList.add("bg-green-500"); // Manipulación del elemento: añade una clase de Tailwind
   }
 }
 ```
