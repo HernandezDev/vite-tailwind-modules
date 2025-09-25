@@ -1,6 +1,6 @@
 # Vite-tailwind-modules
 
-Proyecto base con Vite, TailwindCSS y módulos dinámicos ESModule.
+Proyecto base con Vite, TailwindCSS y Clases en ESModules. Pensado para POO en frontend.
 
 ## Características
 
