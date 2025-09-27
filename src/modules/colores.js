@@ -1,5 +1,6 @@
 export default class Colores {
   constructor() {
+    this.indice = 0;
     this.colors = {
       rojo: {
         text: 'text-red-500',
@@ -25,8 +26,10 @@ export default class Colores {
   }
   getColor() {
     const keys = Object.keys(this.colors);
-    const indice = Math.floor(Math.random() * keys.length);
+    const indice = parseInt(this.indice % keys.length);
+    this.indice++;
     const colorObj = this.colors[keys[indice]];
+    window.dispatchEvent(new CustomEvent('colorChange', { detail: colorObj.text }));
     return `${colorObj.bg} ${colorObj.hover}`;
   }
 }
