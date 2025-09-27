@@ -93,6 +93,3 @@ export default class twClass {
   }
 }
 ```
-
-Puedes consultar la documentación oficial para más detalles y personalizaciones:  
-https://github.com/dcastil/tailwind-merge
