@@ -78,12 +78,12 @@ El código y las clases de Tailwind se ordenan automáticamente al guardar los a
 Este proyecto utiliza la librería [tailwind-merge](https://github.com/dcastil/tailwind-merge) para gestionar y fusionar clases de Tailwind de forma inteligente.  
 `tailwind-merge` elimina clases duplicadas y resuelve conflictos, asegurando que solo se aplique la clase más relevante (por ejemplo, si tienes `bg-red-500 bg-blue-500`, solo se aplicará `bg-blue-500`)
 
-En el módulo `twclass`, se expone el método `addClass` que utiliza `twMerge` para añadir clases al elemento evitando duplicados y conflictos:
+En el módulo `twClass`, se expone el método `addClass` que utiliza `twMerge` para añadir clases al elemento evitando duplicados y conflictos:
 
 ```js
 import { twMerge } from "tailwind-merge";
 
-export default class twclass {
+export default class twClass {
   constructor(element) {
     this.element = element;
   }
