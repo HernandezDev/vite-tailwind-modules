@@ -1,5 +1,5 @@
 import { twMerge } from 'tailwind-merge'
-import Colores from './colores.js'; // <-- Corrige la importación
+import Colores from './colores.js'; 
 
 export default class Contador {
   constructor(element) {
