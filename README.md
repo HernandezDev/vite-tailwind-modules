@@ -73,4 +73,25 @@ Agrega un elemento con el atributo `data-module="nombreModulo"` para que se inst
 Este proyecto incluye Prettier y el plugin prettier-plugin-tailwindcss.  
 El código y las clases de Tailwind se ordenan automáticamente al guardar los archivos.
 
+## Uso de tailwind-merge
 
+Este proyecto utiliza la librería [tailwind-merge](https://github.com/dcastil/tailwind-merge) para gestionar y fusionar clases de Tailwind de forma inteligente.  
+`tailwind-merge` elimina clases duplicadas y resuelve conflictos, asegurando que solo se aplique la clase más relevante (por ejemplo, si tienes `bg-red-500 bg-blue-500`, solo se aplicará `bg-blue-500`)
+
+En el módulo `twClass`, se expone el método `addClass` que utiliza `twMerge` para añadir clases al elemento evitando duplicados y conflictos:
+
+```js
+import { twMerge } from "tailwind-merge";
+
+export default class twClass {
+  constructor(element) {
+    this.element = element;
+  }
+  addClass(newClasses) {
+    this.element.className = twMerge(this.element.className, newClasses);
+  }
+}
+```
+
+Puedes consultar la documentación oficial para más detalles y personalizaciones:  
+https://github.com/dcastil/tailwind-merge
