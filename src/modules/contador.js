@@ -1,4 +1,4 @@
-import twClass from './twClass.js';
+import twClass from './twclass.js';
 export default class Contador {
   constructor(element) {
     this.element = element;
