@@ -1,5 +1,5 @@
 import { twMerge } from 'tailwind-merge'
-export default class twclass {
+export default class twClass {
   constructor(element) {
     this.element = element;
   }

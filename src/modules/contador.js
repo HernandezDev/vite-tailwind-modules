@@ -1,8 +1,8 @@
-import twclass from './twclass.js';
+import twClass from './twClass.js';
 export default class Contador {
   constructor(element) {
     this.element = element;
-    this.twclass = new twclass(this.element);
+    this.twclass = new twClass(this.element);
     element.addEventListener('click', () => {
       this.increment();
      });
