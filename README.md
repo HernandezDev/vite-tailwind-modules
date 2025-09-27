@@ -41,6 +41,7 @@ Cada módulo debe exportar una clase por defecto.
 
 ```js
 // src/modules/contador.js
+import { twMerge } from "tailwind-merge";
 export default class Contador {
   constructor(element) {
     // Puedes crear propiedades en cualquier método usando "this.propiedad"
@@ -53,7 +54,11 @@ export default class Contador {
   increment() {
     // Acceso a la propiedad "element" desde otro método
     this.element.textContent = parseInt(this.element.textContent) + 1;
-    this.element.classList.add("bg-green-500"); // Manipulación del elemento: añade una clase de Tailwind
+    this.addClass("bg-green-500 hover:bg-green-700"); // Manipulación del elemento: añade clases de Tailwind
+  }
+  addClass(className) {
+    // Utiliza tailwind-merge para evitar duplicados y conflictos de clases
+    this.element.className = twMerge(this.element.className, className);
   }
 }
 ```
@@ -66,7 +71,7 @@ Todas las propiedades creadas con `this` son accesibles desde cualquier método 
 Agrega un elemento con el atributo `data-module="nombreModulo"` para que se instancie automáticamente:
 
 ```html
-<button data-module="algo">Probar Algo</button>
+<button data-module="contador">0</button>
 ```
 
 ## Formateo de código
@@ -79,17 +84,14 @@ El código y las clases de Tailwind se ordenan automáticamente al guardar los a
 Este proyecto utiliza la librería [tailwind-merge](https://github.com/dcastil/tailwind-merge) para gestionar y fusionar clases de Tailwind de forma inteligente.  
 `tailwind-merge` elimina clases duplicadas y resuelve conflictos, asegurando que solo se aplique la clase más relevante (por ejemplo, si tienes `bg-red-500 bg-blue-500`, solo se aplicará `bg-blue-500`)
 
-En el módulo `twClass`, se expone el método `addClass` que utiliza `twMerge` para añadir clases al elemento evitando duplicados y conflictos:
+En el ejemplo de la clase `Contador`, se utiliza el método `addClass` que emplea `twMerge` para añadir clases al elemento evitando duplicados y conflictos.
 
-```js
-import { twMerge } from "tailwind-merge";
-
-export default class twClass {
-  constructor(element) {
-    this.element = element;
-  }
-  addClass(newClasses) {
-    this.element.className = twMerge(this.element.className, newClasses);
-  }
+```
+constructor(element) {
+this.element = element;
 }
+addClass(newClasses) {
+this.element.className = twMerge(this.element.className, newClasses);
+}
+
 ```
