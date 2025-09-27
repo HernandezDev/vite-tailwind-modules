@@ -9,6 +9,7 @@ Proyecto base con Vite, TailwindCSS y Clases en ESModules. Pensado para POO en f
 - Importación dinámica de módulos JS según el DOM (`data-module`).
 - Ejemplo de modularidad: solo se cargan los módulos necesarios.
 - Uso de **clases de POO (Programación Orientada a Objetos)** para organizar la lógica en módulos ESModules.
+- Uso de [tailwind-merge](https://github.com/dcastil/tailwind-merge) para fusionar y gestionar clases de Tailwind de forma inteligente.
 - Incluye [Prettier](https://prettier.io/) y el plugin [prettier-plugin-tailwindcss](https://github.com/tailwindlabs/prettier-plugin-tailwindcss) para formateo automático de código y clases de Tailwind.
 
 ## Instalación
