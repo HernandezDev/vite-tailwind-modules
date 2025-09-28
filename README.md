@@ -2,6 +2,9 @@
 
 Proyecto base con Vite, TailwindCSS y Clases en ESModules. Pensado para POO en frontend.
 
+**Este ejercicio está desplegado en:**  
+[https://hernandezdev.github.io/vite-tailwind-modules/](https://hernandezdev.github.io/vite-tailwind-modules/)
+
 ## Características
 
 - Vite como bundler y servidor de desarrollo.
@@ -78,5 +81,3 @@ Agrega un elemento con el atributo `data-module="nombreModulo"` para que se inst
 
 Este proyecto incluye Prettier y el plugin prettier-plugin-tailwindcss.  
 El código y las clases de Tailwind se ordenan automáticamente al guardar los archivos.
-
-
