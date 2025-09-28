@@ -9,8 +9,10 @@ export default class Contador {
       this.increment();
      });
      document.addEventListener('click', (event) => {
-      // si el clic fue fuera de un contador
-      if (!event.target.closest('[data-module="contador"]')) {
+      // si el clic fue fuera del elemento
+      if (!element.contains(event.target)) {
+        // o si el clic fue fuera de un contador
+        //!event.target.closest('[data-module="contador"]')
         this.changeColor();
       }
     });
