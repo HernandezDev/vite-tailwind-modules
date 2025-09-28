@@ -8,13 +8,14 @@ export default class Contador {
     element.addEventListener('click', () => {
       this.increment();
      });
-    element.addEventListener('contextmenu', (event) => {
-      event.preventDefault();
-      this.changeColor();
-     });
-     element.addEventListener('touchmove', () => {
-      this.changeColor();
+     document.addEventListener('click', (event) => {
+      if (!element.contains(event.target)) {
+        // El clic fue fuera del elemento
+        // Tu acción aquí
+        this.changeColor();
+      }
     });
+   
 }
   increment() {
     this.element.textContent = parseInt(this.element.textContent) + 1;
