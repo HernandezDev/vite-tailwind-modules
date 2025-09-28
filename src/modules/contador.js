@@ -9,9 +9,8 @@ export default class Contador {
       this.increment();
      });
      document.addEventListener('click', (event) => {
+      // si el clic fue fuera del elemento
       if (!element.contains(event.target)) {
-        // El clic fue fuera del elemento
-        // Tu acción aquí
         this.changeColor();
       }
     });
