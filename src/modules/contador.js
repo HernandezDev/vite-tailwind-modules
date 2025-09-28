@@ -12,19 +12,10 @@ export default class Contador {
       event.preventDefault();
       this.changeColor();
      });
-
-    // Longpress para móviles
-    let longPressTimer;
-    element.addEventListener('touchstart', () => {
-      longPressTimer = setTimeout(() => {
-        this.changeColor();
-      }, 600); // 600ms para longpress
+     element.addEventListener('touchmove', () => {
+      this.changeColor();
     });
-    element.addEventListener('touchend', () => {
-      clearTimeout(longPressTimer);
-    });
-    }
-
+}
   increment() {
     this.element.textContent = parseInt(this.element.textContent) + 1;
   }
