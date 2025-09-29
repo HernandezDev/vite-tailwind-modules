@@ -1,7 +1,6 @@
 export default class Colores {
   constructor() {
     this.indice = 0;
-    this.colorObj = null;
     this.colors = {
       rojo: {
         text: 'text-red-500',
@@ -24,6 +23,7 @@ export default class Colores {
         hover: 'hover:bg-yellow-700'
       }
     };
+    this.colorObj = this.colors[Object.keys(this.colors)[this.indice]];
   }
   
   changeColor() {
@@ -35,9 +35,6 @@ export default class Colores {
     window.dispatchEvent(new CustomEvent('colorChange'));
   }
   getColor() {
-    if (!this.colorObj) {
-      this.colorObj = this.colors[Object.keys(this.colors)[this.indice]];
-    }
     return this.colorObj
   }
 }
