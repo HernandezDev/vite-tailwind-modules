@@ -1,6 +1,9 @@
 import './style.css'
+import colores from './context/colores.js';
 
-const context = {};
+const context = {
+  colores: new colores()
+};
 
 async function initModules() {
   // Importar todos los módulos de src/modules usando import.meta.glob
