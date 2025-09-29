@@ -1,10 +1,9 @@
 import { twMerge } from 'tailwind-merge'
-import Colores from './colores.js'; 
 
 export default class Contador {
-  constructor(element) {
+  constructor(element, context) {
     this.element = element;
-    this.color = new Colores();
+    this.color = context.colores;
     element.addEventListener('click', () => {
       this.increment();
      });
@@ -16,16 +15,22 @@ export default class Contador {
         this.changeColor();
       }
     });
-   
-}
+    window.addEventListener('colorChange', () => { // Cambia document por window
+      this.setColor();
+    });
+
+  }
   increment() {
     this.element.textContent = parseInt(this.element.textContent) + 1;
   }
-  addClass(className) {
-    this.element.className = twMerge(this.element.className, className);
-  }
+  
   changeColor() {
-    this.addClass(this.color.getColor());
+    this.color.changeColor();
+  }
+  setColor() {
+    const bg = this.color.getColor().bg;
+    const hover = this.color.getColor().hover;
+    this.element.className = twMerge(this.element.className, bg, hover);
   }
 }
 
