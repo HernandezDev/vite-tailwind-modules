@@ -6,7 +6,7 @@
   Un método que solo devuelva el color actual sin modificar el estado
 
 - Pasar este objeto de contexto a los constructores de los módulos
-  intanciandolo en main.js
+  instanciandolo en main.js
 
 ```javascript
 import Colores from "./context/colores.js";
