@@ -1,7 +1,8 @@
 import { twMerge } from 'tailwind-merge'
 export default class TituloColorido {
-  constructor(element) {
+  constructor(element, context) {
     this.element = element;
+    this.contex = context;
     window.addEventListener('colorChange', (event) => {
       this.changeColor(event.detail);
     });

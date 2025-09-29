@@ -2,8 +2,9 @@ import { twMerge } from 'tailwind-merge'
 import Colores from './colores.js'; 
 
 export default class Contador {
-  constructor(element) {
+  constructor(element, context) {
     this.element = element;
+    this.context = context;
     this.color = new Colores();
     element.addEventListener('click', () => {
       this.increment();
