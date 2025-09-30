@@ -17,7 +17,7 @@ Proyecto base con Vite, TailwindCSS y Clases en ESModules. Pensado para POO en f
 
 ## Explicación de directorios
 
-- **src/modules/**: Aquí se colocan los módulos JavaScript que contienen la lógica de cada componente o funcionalidad. Cada archivo debe exportar una clase por defecto, permitiendo la modularidad y reutilización en el proyecto.
+- **src/modules/**: Aquí se colocan los módulos JavaScript que contienen la lógica de cada elemeto del DOM. Cada archivo debe exportar una clase por defecto, permitiendo la modularidad y reutilización en el proyecto.
 - **src/context/**: Este directorio está destinado a la gestión de contexto global o compartido entre módulos, como estados, configuraciones o utilidades que pueden ser accedidas por diferentes partes de la aplicación.
 - **docs/**: Se utiliza para poder publicar el proyecto mediante GitHub Pages.
 
