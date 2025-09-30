@@ -81,3 +81,9 @@ Agrega un elemento con el atributo `data-module="nombreModulo"` para que se inst
 
 Este proyecto incluye Prettier y el plugin prettier-plugin-tailwindcss.  
 El código y las clases de Tailwind se ordenan automáticamente al guardar los archivos.
+
+## Explicación de directorios
+
+- **modules/**: Aquí se colocan los módulos JavaScript que contienen la lógica de cada componente o funcionalidad. Cada archivo debe exportar una clase por defecto, permitiendo la modularidad y reutilización en el proyecto.
+- **context/**: Este directorio está destinado a la gestión de contexto global o compartido entre módulos, como estados, configuraciones o utilidades que pueden ser accedidas por diferentes partes de la aplicación.
+- **docs/**: Se utiliza para poder publicar el proyecto mediante GitHub Pages.
