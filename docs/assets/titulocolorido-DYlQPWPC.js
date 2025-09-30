@@ -1,0 +1,1 @@
+import{t as e}from"./bundle-mjs-D6B6e0vX.js";class r{constructor(o,t){this.element=o,this.color=t.colores,window.addEventListener("colorChange",()=>{this.setColor()})}setColor(){const o=this.color.getColor().text;this.element.className=e(this.element.className,o)}}export{r as default};

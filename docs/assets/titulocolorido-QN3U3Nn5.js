@@ -1,1 +1,0 @@
-import{t as o}from"./bundle-mjs-D6B6e0vX.js";class l{constructor(e){this.element=e,window.addEventListener("colorChange",t=>{this.changeColor(t.detail)})}changeColor(e){this.element.className=o(this.element.className,e)}}export{l as default};
